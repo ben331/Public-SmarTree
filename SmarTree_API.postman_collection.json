@@ -1,0 +1,185 @@
+{
+	"info": {
+		"_postman_id": "a73a14e7-6d91-46df-ada6-c8ef21dbb401",
+		"name": "SmarTree_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16105658",
+		"_collection_link": "https://winter-firefly-950116.postman.co/workspace/Team-Workspace~95aefc5a-3b71-4824-821e-4f0915edc551/collection/16105658-a73a14e7-6d91-46df-ada6-c8ef21dbb401?action=share&creator=16105658&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "Temporal",
+			"item": [
+				{
+					"name": "Vibration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phy_payload\": {\n        \"payload\": {\n            \"fhdr\":{\n                \"devaddr\": \"005dc2d2\",\n                \"frm_payload\": \"00132b2b2b2a2a2a2a2a29292929292aec782828272727272626262626252525252524242424242323232323222222222200\"\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/temporal",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"temporal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sensor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/temporal/sensor?devaddr=005dc2d2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"temporal",
+								"sensor"
+							],
+							"query": [
+								{
+									"key": "devaddr",
+									"value": "005dc2d2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reading",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/temporal/readings?devaddr=005dc2d2&packageId=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"temporal",
+								"readings"
+							],
+							"query": [
+								{
+									"key": "devaddr",
+									"value": "005dc2d2"
+								},
+								{
+									"key": "packageId",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Readings",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/temporal/readings?devaddr=005dc2d2&packageId=0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"temporal",
+								"readings"
+							],
+							"query": [
+								{
+									"key": "devaddr",
+									"value": "005dc2d2"
+								},
+								{
+									"key": "packageId",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Wating List",
+			"item": [
+				{
+					"name": "Pending Records",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/waiting/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"waiting",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Record analized",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/waiting/record?_id=fad29c9c1faa9691f08b6c9e05026c25&_rev=1-66e78ab9ec86528326c2a41a0be39706",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"waiting",
+								"record"
+							],
+							"query": [
+								{
+									"key": "_id",
+									"value": "fad29c9c1faa9691f08b6c9e05026c25"
+								},
+								{
+									"key": "_rev",
+									"value": "1-66e78ab9ec86528326c2a41a0be39706"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
